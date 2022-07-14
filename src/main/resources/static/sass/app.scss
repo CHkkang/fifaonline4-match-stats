@@ -1,0 +1,9 @@
+@import "font-fifa";
+@import "home/home";
+@import "layouts/footer";
+
+html, body {
+  font-family: 'FIFA', sans-serif;
+  font-size: 16px;
+  word-break: keep-all;
+}
