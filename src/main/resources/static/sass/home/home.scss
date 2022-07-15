@@ -5,13 +5,11 @@
 }
 
 .result-area {
-  height: 100vh;
   width: 100%;
   padding-left: 100px;
   padding-right: 100px;
   padding-top: 100px;
-  background-repeat: round;
-  background-image: url("../imgs/result-area1.jpg");
+  background: silver;
 }
 
 .search-card {
@@ -46,7 +44,6 @@
   background: white;
   align-items: center;
   border-radius: 8px;
-  box-shadow: 0px 10px 30px rgba(70, 0, 0, .3);
 
   .block {
     text-align: center;
@@ -59,13 +56,13 @@
 
     &.win {
       &:hover {
-        color: green;
+        color: blue;
       }
     }
 
     &.draw {
       &:hover {
-        color: blue;
+        color: gray;
       }
     }
 
@@ -74,7 +71,6 @@
         color: red;
       }
     }
-
 
     .number {
       font-size: 32px;
@@ -90,11 +86,8 @@
 }
 
 .detail-board {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
   width: 70%;
-  height: 100px;
+  height: 150px;
   background: white;
   align-items: center;
   border-radius: 8px;
@@ -103,7 +96,38 @@
   font-size: 32px;
   font-weight: bold;
 
+
+  &.win {
+    border-left: 20px solid blue;
+    background: rgb(237,242,255);
+    box-shadow: 0px 10px 30px rgba(0, 70, 255, .4);
+  }
+
+  &.draw {
+    border-left: 20px solid rgb(119, 133, 146);
+    background: rgb(247,247,249);
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, .4);
+  }
+
+  &.lose {
+    border-left: 20px solid red;
+    background: rgb(254,241,234);
+    box-shadow: 0px 10px 30px rgba(255, 0, 0, .4);
+  }
+
   .datetime {
-    font-size: 32px;
+    font-size: 20px;
+  }
+
+  .row {
+    height: 150px;
+
+    .user {
+      font-size: 27px;
+    }
+
+    .score {
+      font-size: 40px;
+    }
   }
 }
