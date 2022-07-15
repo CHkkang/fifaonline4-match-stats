@@ -33,10 +33,9 @@ public class HomeController {
     @GetMapping("/search")
     public String search(RedirectAttributes redirectAttributes, MatchDto matchDto) {
         String accessId1 = matchService.getUsers(matchDto.getNickname1());
-        String accessId2 = matchService.getUsers(matchDto.getNickname2());
         List<String> matchList = matchService.findMatches(matchDto, accessId1);
-        MatchVo matchVo = matchService.calculateWDL(matchList, accessId2);
-
+        MatchVo matchVo = matchService.calculateWDL(matchList, matchDto);
+        
         redirectAttributes.addFlashAttribute("matchInfo", matchVo);
 
         return "redirect:/";

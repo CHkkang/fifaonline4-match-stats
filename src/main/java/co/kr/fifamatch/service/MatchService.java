@@ -22,8 +22,10 @@ public class MatchService {
         return apiClient.findMatches(matchDto, accessId);
     }
 
-    public MatchVo calculateWDL(List<String> matchList, String accessId2) {
-        return apiClient.calculateWDL(matchList, accessId2);
+    public MatchVo calculateWDL(List<String> matchList, MatchDto matchDto) {
+        String opponentId = getUsers(matchDto.getNickname2());
+
+        return apiClient.calculateWDL(matchList, matchDto, opponentId);
     }
 
 

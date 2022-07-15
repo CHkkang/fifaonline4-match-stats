@@ -84,13 +84,13 @@ public class ApiClient {
         return list;
     }
 
-    public MatchVo calculateWDL(List<String> matchList, String accessId2) {
+    public MatchVo calculateWDL(List<String> matchList, MatchDto matchDto, String accessId2) {
         HttpHeaders httpHeaders = new HttpHeaders();
         httpHeaders.setContentType(new MediaType("application", "json", StandardCharsets.UTF_8));
         httpHeaders.set("Authorization", key);
         HttpEntity entity = new HttpEntity(httpHeaders);
 
-        MatchVo matchVo = new MatchVo(0, 0, 0,  new ArrayList<>());
+        MatchVo matchVo = new MatchVo(0, 0, 0,  matchDto.getNickname1(), matchDto.getNickname2(), new ArrayList<>());
         for(String s : matchList) {
             String requestUrl = UriComponentsBuilder.fromHttpUrl(url + "matches/" + s)
                     .build()
