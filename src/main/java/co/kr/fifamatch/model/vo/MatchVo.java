@@ -12,11 +12,14 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 public class MatchVo {
-    Integer wCount;
-    Integer lCount;
-    Integer dCount;
+    private Integer wCount;
+    private Integer lCount;
+    private Integer dCount;
 
-    List<ScoreVo> scoreVoList;
+    private String homeUser;
+
+    private String awayUser;
+    private List<ScoreVo> scoreVoList;
 
     public void set(String WDL, ScoreVo scoreVo) {
         if (WDL.equals("승"))
